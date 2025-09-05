@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://0f1vb4r58uye"]
+
+[ext_resource type="Texture2D" uid="uid://b78v84su8momb" path="res://Assets/Objects/SlotMachine/Ammo.png" id="1_85iy1"]
+[ext_resource type="Script" uid="uid://b6iu1k0g057n7" path="res://Scripts/ammo.gd" id="1_k1oq4"]
+[ext_resource type="AudioStream" uid="uid://by6leteids6sa" path="res://Assets/Audio/MenuClick.wav" id="3_m5xct"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kysgl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1oq4"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_85iy1")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[node name="Ammo" type="Area3D"]
+script = ExtResource("1_k1oq4")
+ammo_to_give = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_kysgl")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_k1oq4")
+texture = ExtResource("1_85iy1")
+
+[node name="PickupSFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_m5xct")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

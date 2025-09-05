@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwxu02bm0oivu"]
+
+[ext_resource type="Texture2D" uid="uid://tdsu12repfh" path="res://Assets/Objects/SlotMachine/Pain.png" id="1_sucyl"]
+
+[node name="SlotMachineUI" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1020.0
+offset_top = 59.0
+offset_right = 1218.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DamageTakenLabel" type="Label" parent="."]
+offset_left = 92.0
+offset_top = 5.0
+offset_right = 119.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GunCapacityLabel" type="Label" parent="."]
+offset_left = 91.0
+offset_top = 35.0
+offset_right = 119.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pain" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(48, 40)
+scale = Vector2(0.25293, 0.25293)
+texture = ExtResource("1_sucyl")

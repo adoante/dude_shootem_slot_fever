@@ -1,0 +1,365 @@
+[gd_scene load_steps=12 format=3 uid="uid://bvugbbrryechd"]
+
+[ext_resource type="PackedScene" uid="uid://3dbdqkb2btes" path="res://Scenes/Rooms/basic_room.tscn" id="1_g8hcn"]
+[ext_resource type="PackedScene" uid="uid://dlyt5e87j8yde" path="res://Scenes/Walls/roof.tscn" id="2_bj2jg"]
+[ext_resource type="PackedScene" uid="uid://cewm6p6kyw05i" path="res://Scenes/Walls/light.tscn" id="3_16a3e"]
+[ext_resource type="PackedScene" uid="uid://c8d6do8asmcfm" path="res://Scenes/Walls/pillar.tscn" id="4_16a3e"]
+[ext_resource type="PackedScene" uid="uid://bx73dsifc6s8v" path="res://Scenes/Objects/SlotMachine/slot_machine.tscn" id="5_sqgde"]
+[ext_resource type="PackedScene" uid="uid://bcyivprdusucj" path="res://Scenes/Walls/wall.tscn" id="6_50v3p"]
+[ext_resource type="Texture2D" uid="uid://bbti5fvjvy20h" path="res://Assets/Textures/tuorial.png" id="6_hkvtp"]
+[ext_resource type="Texture2D" uid="uid://b8ga5dygu3k2u" path="res://Assets/Textures/tuorial_2.png" id="7_50v3p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwvt3"]
+albedo_texture = ExtResource("6_hkvtp")
+uv1_scale = Vector3(-1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f15bn"]
+size = Vector3(5, 5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8ud6"]
+albedo_texture = ExtResource("7_50v3p")
+uv1_scale = Vector3(-1, 1, 1)
+
+[node name="Room_0" type="Node3D"]
+
+[node name="BasicRoom" parent="." instance=ExtResource("1_g8hcn")]
+
+[node name="Cieling" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.413658, 0, 0.504883)
+
+[node name="Roof" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, 22)
+
+[node name="Roof2" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 6, 22)
+
+[node name="Roof3" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, 22)
+
+[node name="Roof4" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 6, 22)
+
+[node name="Roof5" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, 22)
+
+[node name="Roof6" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6, 22)
+
+[node name="Roof7" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, 22)
+
+[node name="Roof8" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, 22)
+
+[node name="Roof9" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, 22)
+
+[node name="Roof10" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, 22)
+
+[node name="Roof11" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, 17)
+
+[node name="Roof13" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, 17)
+
+[node name="Roof18" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, 17)
+
+[node name="Roof20" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, 17)
+
+[node name="Roof21" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, 12)
+
+[node name="Roof22" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 6, 12)
+
+[node name="Roof23" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, 12)
+
+[node name="Roof24" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 6, 12)
+
+[node name="Roof27" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, 12)
+
+[node name="Roof28" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, 12)
+
+[node name="Roof29" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, 12)
+
+[node name="Roof30" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, 12)
+
+[node name="Roof31" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, 7)
+
+[node name="Roof33" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, 7)
+
+[node name="Roof35" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, 7)
+
+[node name="Roof36" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6, 7)
+
+[node name="Roof38" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, 7)
+
+[node name="Roof40" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, 7)
+
+[node name="Roof41" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, 2)
+
+[node name="Roof43" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, 2)
+
+[node name="Roof44" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 6, 2)
+
+[node name="Roof47" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, 2)
+
+[node name="Roof48" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, 2)
+
+[node name="Roof50" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, 2)
+
+[node name="Roof51" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, -3)
+
+[node name="Roof53" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, -3)
+
+[node name="Roof54" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 6, -3)
+
+[node name="Roof57" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, -3)
+
+[node name="Roof58" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, -3)
+
+[node name="Roof60" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, -3)
+
+[node name="Roof61" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, -8)
+
+[node name="Roof63" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, -8)
+
+[node name="Roof67" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, -18)
+
+[node name="Roof69" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6, -18)
+
+[node name="Roof62" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, -13)
+
+[node name="Roof86" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6, -13)
+
+[node name="Roof65" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, -8)
+
+[node name="Roof66" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6, -8)
+
+[node name="Roof68" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, -8)
+
+[node name="Roof70" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, -8)
+
+[node name="Roof71" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, -13)
+
+[node name="Roof72" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 6, -13)
+
+[node name="Roof73" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, -13)
+
+[node name="Roof74" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 6, -13)
+
+[node name="Roof77" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, -13)
+
+[node name="Roof78" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, -13)
+
+[node name="Roof79" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, -13)
+
+[node name="Roof80" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, -13)
+
+[node name="Roof81" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, -18)
+
+[node name="Roof83" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, -18)
+
+[node name="Roof88" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, -18)
+
+[node name="Roof90" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, -18)
+
+[node name="Roof91" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, -23)
+
+[node name="Roof92" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 6, -23)
+
+[node name="Roof93" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, -23)
+
+[node name="Roof94" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 6, -23)
+
+[node name="Roof95" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, -23)
+
+[node name="Roof96" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6, -23)
+
+[node name="Roof97" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, -23)
+
+[node name="Roof98" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, -23)
+
+[node name="Roof99" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, -23)
+
+[node name="Roof100" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, -23)
+
+[node name="Roof45" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 6, -3)
+
+[node name="Roof49" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 6, 2)
+
+[node name="Roof55" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, 2)
+
+[node name="Roof59" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, -3)
+
+[node name="Roof56" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, -3)
+
+[node name="Roof85" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6, -3)
+
+[node name="Roof101" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, 2)
+
+[node name="Roof102" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6, 2)
+
+[node name="Roof19" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6, 17)
+
+[node name="Roof15" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, 17)
+
+[node name="Roof16" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6, 12)
+
+[node name="Roof25" parent="Cieling" instance=ExtResource("2_bj2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, 12)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="light" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5861, 6, 7.50464)
+
+[node name="light2" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5864, 6, 17.5049)
+
+[node name="light3" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58718, 6, 7.50464)
+
+[node name="light4" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58751, 6, 17.5049)
+
+[node name="light5" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4116, 6, 7.50464)
+
+[node name="light6" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41127, 6, 17.5049)
+
+[node name="light7" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4105, 6, 7.50464)
+
+[node name="light8" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4102, 6, 17.5049)
+
+[node name="light9" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5864, 6, -17.4951)
+
+[node name="light10" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5868, 6, -7.49483)
+
+[node name="light11" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58751, 6, -17.4951)
+
+[node name="light12" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58784, 6, -7.49483)
+
+[node name="light13" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41127, 6, -17.4951)
+
+[node name="light14" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41094, 6, -7.49483)
+
+[node name="light15" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4102, 6, -17.4951)
+
+[node name="light16" parent="Lights" instance=ExtResource("3_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4098, 6, -7.49483)
+
+[node name="Pillar" parent="." instance=ExtResource("4_16a3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="SlotMachine" parent="." instance=ExtResource("5_sqgde")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.999449)
+
+[node name="Wall" type="StaticBody3D" parent="." groups=["walls"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 3, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Wall"]
+material_override = SubResource("StandardMaterial3D_bwvt3")
+use_collision = true
+size = Vector3(5, 5, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
+shape = SubResource("BoxShape3D_f15bn")
+
+[node name="Wall2" type="StaticBody3D" parent="." groups=["walls"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.521796, 0, -4.89056e-05)
+material_override = SubResource("StandardMaterial3D_b8ud6")
+use_collision = true
+size = Vector3(5, 5, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2"]
+shape = SubResource("BoxShape3D_f15bn")
+
+[node name="Wall3" parent="." instance=ExtResource("6_50v3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.40747, 3, -0.106079)
+
+[node name="Wall4" parent="." instance=ExtResource("6_50v3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5491, 3, -0.106079)

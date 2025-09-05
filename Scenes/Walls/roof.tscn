@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlyt5e87j8yde"]
+
+[ext_resource type="Texture2D" uid="uid://c4mkuyhafa1cl" path="res://Assets/Textures/cieling.png" id="1_4g1a3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_585uy"]
+albedo_texture = ExtResource("1_4g1a3")
+
+[node name="Roof" type="CSGBox3D"]
+material_override = SubResource("StandardMaterial3D_585uy")
+use_collision = true
+size = Vector3(5, 1, 5)

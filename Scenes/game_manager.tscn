@@ -1,0 +1,28 @@
+[gd_scene load_steps=10 format=3 uid="uid://0vuwsjsuxsv0"]
+
+[ext_resource type="Script" uid="uid://euvn4cwqa4ev" path="res://Scripts/GameManager.gd" id="1_oj352"]
+[ext_resource type="PackedScene" uid="uid://de4vsq0an731b" path="res://Scenes/Rooms/room_1.tscn" id="2_yqty0"]
+[ext_resource type="PackedScene" uid="uid://xcb1s3g3bq6d" path="res://Scenes/Rooms/room_2.tscn" id="3_71d4j"]
+[ext_resource type="PackedScene" uid="uid://bv0non50q6prp" path="res://Scenes/Rooms/room_3.tscn" id="4_efn8y"]
+[ext_resource type="PackedScene" uid="uid://c7sim84h1a1tw" path="res://Scenes/Rooms/room_4.tscn" id="5_i4mau"]
+[ext_resource type="PackedScene" uid="uid://4l027r0amtas" path="res://Scenes/Rooms/room_5.tscn" id="6_b5cn8"]
+[ext_resource type="PackedScene" uid="uid://bq8v0eye6x5ys" path="res://Scenes/Walls/closing_wall.tscn" id="7_71d4j"]
+[ext_resource type="PackedScene" uid="uid://dwxu02bm0oivu" path="res://Scenes/UI/slot_machine_ui.tscn" id="8_efn8y"]
+[ext_resource type="AudioStream" uid="uid://dllnl0e16rb7i" path="res://Assets/Audio/main_bgm.ogg" id="9_i4mau"]
+
+[node name="GameManager" type="Node3D"]
+script = ExtResource("1_oj352")
+starting_ammo = 120
+max_health = 10
+starting_money = 100
+room_scenes = Array[PackedScene]([ExtResource("2_yqty0"), ExtResource("3_71d4j"), ExtResource("4_efn8y"), ExtResource("5_i4mau"), ExtResource("6_b5cn8")])
+wall_scene = ExtResource("7_71d4j")
+
+[node name="ReloadTimer" type="Timer" parent="."]
+
+[node name="SlotMachineUI" parent="." instance=ExtResource("8_efn8y")]
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_i4mau")
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

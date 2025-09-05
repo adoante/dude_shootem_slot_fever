@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://dwwnj77t8kehj"]
+
+[ext_resource type="Script" uid="uid://cpe8k1a5ar550" path="res://Scripts/weapon.gd" id="1_2lkax"]
+
+[resource]
+script = ExtResource("1_2lkax")
+name = "Bat"
+damage = 2
+fire_rate = 0.0
+gun_capacity = 0
+reload_time = 1
+bullets_left = 0
+metadata/_custom_type_script = "uid://cpe8k1a5ar550"

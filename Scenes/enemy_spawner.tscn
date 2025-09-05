@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqlpex6amxls7"]
+
+[ext_resource type="Script" uid="uid://dwv6mpuf7g42e" path="res://Scripts/enemy_spawner.gd" id="1_4l55s"]
+
+[node name="EnemySpawner" type="Node3D"]
+script = ExtResource("1_4l55s")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+visible = false

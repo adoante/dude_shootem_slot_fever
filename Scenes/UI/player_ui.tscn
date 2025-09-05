@@ -1,0 +1,186 @@
+[gd_scene load_steps=19 format=3 uid="uid://dt4y20i3cdqs3"]
+
+[ext_resource type="Texture2D" uid="uid://cba6vyxirwj1q" path="res://Assets/Objects/Weapons/MachineGun/MachineGun.png" id="1_7jiju"]
+[ext_resource type="Script" uid="uid://d1omktnl8m20l" path="res://Scripts/player_ui.gd" id="1_21gwg"]
+[ext_resource type="Texture2D" uid="uid://ch03sb2e0kd37" path="res://Assets/Objects/Weapons/Bat/Bat.png" id="2_onufr"]
+[ext_resource type="Texture2D" uid="uid://bmuio1iqsvwua" path="res://Assets/Objects/Weapons/MachineGun/MachineGunShoot.png" id="2_t3flm"]
+[ext_resource type="Texture2D" uid="uid://d11vka4ugskpy" path="res://Assets/Objects/Weapons/Minigun/Minigun.png" id="3_6nfne"]
+[ext_resource type="Texture2D" uid="uid://chprf0f6yn853" path="res://Assets/Objects/Weapons/Bat/BatSwingLeft.png" id="3_plo7s"]
+[ext_resource type="Texture2D" uid="uid://clduiy3it0r1t" path="res://Assets/Objects/Weapons/Minigun/MinigunShoot.png" id="4_21gwg"]
+[ext_resource type="Texture2D" uid="uid://t74v64fbha7b" path="res://Assets/Objects/Weapons/Bat/BatSwingRight.png" id="4_we3k3"]
+[ext_resource type="Texture2D" uid="uid://bk3ih8peb6s8t" path="res://Assets/Objects/Weapons/Pistol/Pistol.png" id="5_jcbsq"]
+[ext_resource type="Texture2D" uid="uid://caobpomlwqny3" path="res://Assets/Objects/Weapons/Pistol/PistolShoot.png" id="6_axtvl"]
+[ext_resource type="Texture2D" uid="uid://b0fdkds1l6pnf" path="res://Assets/Objects/Weapons/Shotgun/Shotgun.png" id="7_onufr"]
+[ext_resource type="Texture2D" uid="uid://baq1kwlxcfoso" path="res://Assets/Objects/Weapons/Shotgun/ShotgunShoot.png" id="8_plo7s"]
+[ext_resource type="Texture2D" uid="uid://cx6wi8wfdupjl" path="res://Assets/UI/HUD.png" id="13_plo7s"]
+[ext_resource type="Texture2D" uid="uid://b6txhtkhjesu4" path="res://Assets/Player/ESTATIC.png" id="14_8wddj"]
+[ext_resource type="Texture2D" uid="uid://vtwewlx507gi" path="res://Assets/Player/HAPPY.png" id="15_2h8c0"]
+[ext_resource type="Texture2D" uid="uid://cy4p5ik33h8tm" path="res://Assets/Player/HURT.png" id="16_gec2o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8n2hl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_onufr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_plo7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_we3k3")
+}],
+"loop": false,
+"name": &"bat",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7jiju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t3flm")
+}],
+"loop": false,
+"name": &"machine_gun",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6nfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_21gwg")
+}],
+"loop": false,
+"name": &"minigun",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jcbsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_axtvl")
+}],
+"loop": false,
+"name": &"pistol",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_onufr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_plo7s")
+}],
+"loop": false,
+"name": &"shotgun",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0f6l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_8wddj")
+}],
+"loop": false,
+"name": &"Estatic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_2h8c0")
+}],
+"loop": false,
+"name": &"Happy",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_gec2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2h8c0")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 1.0
+}]
+
+[node name="PlayerUI" type="CanvasLayer"]
+script = ExtResource("1_21gwg")
+
+[node name="WeaponSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 582)
+scale = Vector2(0.539062, 0.539062)
+sprite_frames = SubResource("SpriteFrames_8n2hl")
+animation = &"pistol"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 180)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_plo7s")
+centered = false
+
+[node name="Money" type="Label" parent="."]
+offset_left = 163.0
+offset_top = 651.0
+offset_right = 254.0
+offset_bottom = 685.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="Label" parent="."]
+offset_left = 235.0
+offset_top = 651.0
+offset_right = 325.0
+offset_bottom = 685.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ammo" type="Label" parent="."]
+offset_left = 325.0
+offset_top = 652.0
+offset_right = 365.0
+offset_bottom = 686.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bullets" type="Label" parent="."]
+offset_left = 382.0
+offset_top = 652.0
+offset_right = 468.0
+offset_bottom = 686.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reload" type="Label" parent="."]
+offset_left = 877.0
+offset_top = 634.0
+offset_right = 921.0
+offset_bottom = 668.0
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(480, 450)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_j0f6l")
+animation = &"Hurt"
+frame = 1
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="WeaponSprite" to="." method="_on_weapon_sprite_animation_finished"]

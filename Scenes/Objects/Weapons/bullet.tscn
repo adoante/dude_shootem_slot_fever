@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://2617fe2k0cop"]
+
+[ext_resource type="Script" uid="uid://vlp6jgyr1loe" path="res://Scripts/bullet.gd" id="1_icmja"]
+[ext_resource type="AudioStream" uid="uid://cgf2ky50ys6jb" path="res://Assets/Audio/gun_shoot.wav" id="2_g68yo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_icmja"]
+albedo_color = Color(1, 0.796078, 0.00784314, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n8lcc"]
+radius = 0.031
+
+[node name="Bullet" type="Area3D"]
+script = ExtResource("1_icmja")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+material_override = SubResource("StandardMaterial3D_icmja")
+radius = 0.031
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_n8lcc")
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="ShootSFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_g68yo")
+volume_db = -35.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://breedqu7c8gpq"]
+
+[ext_resource type="Script" uid="uid://cw665qovajyv2" path="res://Scripts/enemy.gd" id="1_jcvw6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_613su"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dpa8q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_px3k0"]
+size = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpa8q"]
+albedo_color = Color(0.270588, 1, 1, 1)
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_jcvw6")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.178944, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_613su")
+animation = &"walking"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_dpa8q")
+
+[node name="AttackArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+shape = SubResource("BoxShape3D_px3k0")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+visible = false
+material_override = SubResource("StandardMaterial3D_dpa8q")
+
+[node name="TargetTimer" type="Timer" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.514042, -1.00012)
+
+[node name="DespawnTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://olo3tnlii1b7"]
+
+[ext_resource type="Environment" uid="uid://mwpfj278vv7i" path="res://Resources/sky_2.tres" id="1_cs6ec"]
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = ExtResource("1_cs6ec")

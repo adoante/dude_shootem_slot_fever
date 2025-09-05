@@ -1,0 +1,122 @@
+[gd_scene load_steps=13 format=3 uid="uid://bx73dsifc6s8v"]
+
+[ext_resource type="Script" uid="uid://jfgxon7jkixe" path="res://Scripts/slot_machine.gd" id="1_03c2u"]
+[ext_resource type="Texture2D" uid="uid://dkx1xpw5hs143" path="res://Assets/Objects/SlotMachine/SlotMachine.png" id="2_ys3o3"]
+[ext_resource type="Texture2D" uid="uid://sjncqmfe36uk" path="res://Assets/Objects/SlotMachine/SlotMachineSide.png" id="3_a0g5g"]
+[ext_resource type="Texture2D" uid="uid://tdsu12repfh" path="res://Assets/Objects/SlotMachine/Pain.png" id="5_bt6nx"]
+[ext_resource type="Texture2D" uid="uid://33nbo6di2j50" path="res://Assets/Objects/SlotMachine/Love.png" id="6_bql54"]
+[ext_resource type="AudioStream" uid="uid://c45s25mrqmnd6" path="res://Assets/Audio/SlotMachine.wav" id="7_bt6nx"]
+[ext_resource type="AudioStream" uid="uid://ch56uieiab3bi" path="res://Assets/Audio/Win.wav" id="8_cc2i5"]
+[ext_resource type="AudioStream" uid="uid://ceuxa077vmm27" path="res://Assets/Audio/Lose.wav" id="9_m0lde"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4q1cc"]
+height = 3.0
+radius = 1.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sbhbu"]
+radius = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phm1r"]
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cc2i5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bt6nx")
+}],
+"loop": false,
+"name": &"bad",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_bql54")
+}],
+"loop": false,
+"name": &"good",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bt6nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bql54")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 8.0
+}]
+
+[node name="SlotMachine" type="StaticBody3D"]
+script = ExtResource("1_03c2u")
+money_amount = 35
+gun_capacity_time = 30.0
+damage_taken_time = 45.0
+weight_damage_taken = 1.5
+weight_capacity_decrease = 1.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_4q1cc")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_sbhbu")
+
+[node name="Front" type="Sprite3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.0716562, 0.371561, 0.51897)
+texture = ExtResource("2_ys3o3")
+
+[node name="Side1" type="Sprite3D" parent="."]
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 1.05241, 0.375046, -0.356563)
+texture = ExtResource("3_a0g5g")
+
+[node name="Side2" type="Sprite3D" parent="."]
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -0.889055, 0.375046, -0.356563)
+texture = ExtResource("3_a0g5g")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.24755, 0.0646362, 0.119751, -0.107902)
+material_override = SubResource("StandardMaterial3D_phm1r")
+size = Vector3(1.81482, 3.2395, 0.737637)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0907033, 0.665979, 0.490967)
+sprite_frames = SubResource("SpriteFrames_cc2i5")
+animation = &"spin"
+frame_progress = 0.973816
+
+[node name="RollTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="LabelTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="DamageTakenTimer" type="Timer" parent="."]
+
+[node name="GunCapcityTimer" type="Timer" parent="."]
+
+[node name="SpinSFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_bt6nx")
+
+[node name="WinSFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_cc2i5")
+volume_db = -25.0
+
+[node name="LoseSFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_m0lde")
+volume_db = -25.0
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="LabelTimer" to="." method="_on_label_timer_timeout"]
+[connection signal="timeout" from="DamageTakenTimer" to="." method="_on_damage_taken_timer_timeout"]
+[connection signal="timeout" from="GunCapcityTimer" to="." method="_on_gun_capcity_timer_timeout"]

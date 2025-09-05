@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://bld1unxhuc1df"]
+
+[ext_resource type="Script" uid="uid://cpe8k1a5ar550" path="res://Scripts/weapon.gd" id="1_yfrbs"]
+
+[resource]
+script = ExtResource("1_yfrbs")
+name = "Shotgun"
+damage = 8
+fire_rate = 1.0
+gun_capacity = 8
+reload_time = 2
+bullets_left = 8
+metadata/_custom_type_script = "uid://cpe8k1a5ar550"

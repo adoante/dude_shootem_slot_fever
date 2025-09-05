@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://bebm7kopgtyyl"]
+
+[ext_resource type="Script" uid="uid://cpe8k1a5ar550" path="res://Scripts/weapon.gd" id="1_8v3do"]
+
+[resource]
+script = ExtResource("1_8v3do")
+name = "Minigun"
+damage = 10.0
+fire_rate = 0.05
+gun_capacity = 100
+reload_time = 5
+bullets_left = 100
+metadata/_custom_type_script = "uid://cpe8k1a5ar550"

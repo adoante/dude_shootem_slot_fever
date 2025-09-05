@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3 uid="uid://7jpjkaika7ef"]
+
+[ext_resource type="Texture2D" uid="uid://tdkgrg4bj2qx" path="res://Assets/UI/start_screen.png" id="1_uto37"]
+[ext_resource type="Script" uid="uid://b7cidrys3ftjv" path="res://Scripts/start_screen.gd" id="1_vhrx5"]
+[ext_resource type="Texture2D" uid="uid://dpi4xd8msxrgk" path="res://Assets/UI/PlayButton.png" id="2_3aq5a"]
+[ext_resource type="Texture2D" uid="uid://cgh4vhphnauly" path="res://Assets/UI/ExitButton.png" id="5_4dstf"]
+[ext_resource type="AudioStream" uid="uid://by6leteids6sa" path="res://Assets/Audio/MenuClick.wav" id="7_4dstf"]
+
+[sub_resource type="Animation" id="Animation_4dstf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fsdyd"]
+resource_name = "expand_tilt_left_then_right"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(0.7, 0.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.174533, 0.174533]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4dstf"]
+_data = {
+&"RESET": SubResource("Animation_4dstf"),
+&"expand_tilt_left_then_right": SubResource("Animation_fsdyd")
+}
+
+[node name="StartScreen" type="CanvasLayer"]
+script = ExtResource("1_vhrx5")
+
+[node name="StartScreen" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("1_uto37")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 383.0
+offset_top = 410.0
+offset_right = 891.0
+offset_bottom = 568.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(254, 69)
+icon = ExtResource("2_3aq5a")
+flat = true
+icon_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StartButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_4dstf")
+}
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 519.0
+offset_right = 892.0
+offset_bottom = 716.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(254, 98.5)
+icon = ExtResource("5_4dstf")
+flat = true
+icon_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ExitButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_4dstf")
+}
+
+[node name="ClickSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_4dstf")
+
+[connection signal="mouse_entered" from="StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="StartButton" to="." method="_on_start_button_mouse_exited"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="ExitButton" to="." method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
